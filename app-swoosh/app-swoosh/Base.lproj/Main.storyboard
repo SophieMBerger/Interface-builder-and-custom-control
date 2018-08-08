@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--WelcomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WelcomeVC" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,6 +55,9 @@
                                 <state key="normal" title="GET STARTED">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="KIW-Ve-sUD" kind="show" id="Zvi-Sb-q1A"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -80,19 +83,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <connections>
-                        <outlet property="BGImg" destination="B05-oQ-otk" id="Ucc-Ke-GJ1"/>
-                        <outlet property="swoosh" destination="mLR-oU-90X" id="Zgp-FU-MHh"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="117.48768472906404"/>
         </scene>
-        <!--View Controller-->
+        <!--LeagueVC-->
         <scene sceneID="3wN-JH-FwB">
             <objects>
-                <viewController id="KIW-Ve-sUD" sceneMemberID="viewController">
+                <viewController id="KIW-Ve-sUD" customClass="LeagueVC" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ri5-JR-M1D">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -166,35 +165,57 @@
                                 <state key="normal" title="Next">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="onNextTapped:" destination="KIW-Ve-sUD" eventType="touchUpInside" id="Q6j-Le-RmO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVC-18-ZSB">
+                                <rect key="frame" x="25" y="47" width="29" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="29" id="2Rg-6K-QmI"/>
+                                    <constraint firstAttribute="height" constant="24" id="bMm-jk-Qvi"/>
+                                </constraints>
+                                <state key="normal" image="backButton"/>
+                                <connections>
+                                    <segue destination="kql-vE-WOX" kind="unwind" unwindAction="unwindFromSkillVCWithUnwindSegue:" id="IfE-Q5-ysk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="bKx-ZG-rSk" firstAttribute="leading" secondItem="dAL-Ys-fZ2" secondAttribute="leading" constant="16" id="3WR-Uo-a2h"/>
+                            <constraint firstItem="hVC-18-ZSB" firstAttribute="leading" secondItem="dAL-Ys-fZ2" secondAttribute="leading" constant="25" id="3bB-jA-Evr"/>
                             <constraint firstItem="dAL-Ys-fZ2" firstAttribute="trailing" secondItem="qRr-UE-Sc7" secondAttribute="trailing" constant="16" id="Ca3-ag-cSX"/>
                             <constraint firstItem="dAL-Ys-fZ2" firstAttribute="trailing" secondItem="RBF-bv-SXO" secondAttribute="trailing" constant="16" id="EMO-NO-JPo"/>
                             <constraint firstAttribute="bottom" secondItem="61D-Mb-FU3" secondAttribute="bottom" id="MK0-yI-vEN"/>
+                            <constraint firstItem="hVC-18-ZSB" firstAttribute="top" secondItem="dAL-Ys-fZ2" secondAttribute="top" constant="3" id="O1g-9Z-4gp"/>
                             <constraint firstItem="dAL-Ys-fZ2" firstAttribute="trailing" secondItem="bKx-ZG-rSk" secondAttribute="trailing" constant="16" id="S15-sW-bHV"/>
                             <constraint firstItem="61D-Mb-FU3" firstAttribute="leading" secondItem="dAL-Ys-fZ2" secondAttribute="leading" id="WWf-ol-Qg7"/>
                             <constraint firstItem="RBF-bv-SXO" firstAttribute="leading" secondItem="dAL-Ys-fZ2" secondAttribute="leading" constant="16" id="XJ6-hC-PnM"/>
                             <constraint firstItem="dAL-Ys-fZ2" firstAttribute="bottom" secondItem="RBF-bv-SXO" secondAttribute="bottom" constant="38" id="YQz-q1-tqz"/>
                             <constraint firstItem="qRr-UE-Sc7" firstAttribute="top" secondItem="bKx-ZG-rSk" secondAttribute="bottom" constant="55" id="cRw-bp-JkM"/>
+                            <constraint firstItem="dAL-Ys-fZ2" firstAttribute="trailing" secondItem="hVC-18-ZSB" secondAttribute="trailing" constant="321" id="cey-V5-ZM0"/>
                             <constraint firstItem="61D-Mb-FU3" firstAttribute="trailing" secondItem="dAL-Ys-fZ2" secondAttribute="trailing" id="fhd-v3-CTg"/>
+                            <constraint firstItem="bKx-ZG-rSk" firstAttribute="top" secondItem="hVC-18-ZSB" secondAttribute="bottom" constant="17" id="pVf-mE-rSZ"/>
                             <constraint firstItem="61D-Mb-FU3" firstAttribute="top" secondItem="Ri5-JR-M1D" secondAttribute="top" id="swc-yS-BD0"/>
                             <constraint firstItem="bKx-ZG-rSk" firstAttribute="top" secondItem="dAL-Ys-fZ2" secondAttribute="top" constant="44" id="una-lv-DEb"/>
                             <constraint firstItem="qRr-UE-Sc7" firstAttribute="leading" secondItem="dAL-Ys-fZ2" secondAttribute="leading" constant="16" id="z0M-fe-20y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dAL-Ys-fZ2"/>
                     </view>
+                    <connections>
+                        <segue destination="f4Z-P8-fvE" kind="show" identifier="skillVCSegue" id="L3C-iI-zGq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NbD-1c-6QT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="kql-vE-WOX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="833" y="117"/>
         </scene>
-        <!--View Controller-->
+        <!--SkillVC-->
         <scene sceneID="Epx-Oc-xC5">
             <objects>
-                <viewController id="f4Z-P8-fvE" sceneMemberID="viewController">
+                <viewController id="f4Z-P8-fvE" customClass="SkillVC" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xuz-0n-wic">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -263,21 +284,35 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NPX-01-9yg">
+                                <rect key="frame" x="25" y="47" width="29" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="3ET-mR-8z2"/>
+                                    <constraint firstAttribute="width" constant="29" id="8Wt-Ss-InW"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="29" id="kOP-fJ-IJz"/>
+                                    <constraint firstAttribute="height" constant="24" id="xiD-Om-hQD"/>
+                                </constraints>
+                                <state key="normal" image="backButton"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="LnY-Kq-afY" firstAttribute="top" secondItem="xuz-0n-wic" secondAttribute="top" id="58h-wl-Utk"/>
                             <constraint firstItem="AuW-9E-esj" firstAttribute="top" secondItem="wqO-AC-zQE" secondAttribute="top" constant="44" id="5RQ-Xs-w2O"/>
+                            <constraint firstItem="NPX-01-9yg" firstAttribute="top" secondItem="wqO-AC-zQE" secondAttribute="top" constant="3" id="8Ea-YL-c1k"/>
                             <constraint firstItem="wqO-AC-zQE" firstAttribute="trailing" secondItem="wSc-4a-7LM" secondAttribute="trailing" constant="16" id="AH6-RZ-iCm"/>
                             <constraint firstItem="wSc-4a-7LM" firstAttribute="top" secondItem="AuW-9E-esj" secondAttribute="bottom" constant="55" id="Bcz-kF-65x"/>
                             <constraint firstItem="wqO-AC-zQE" firstAttribute="bottom" secondItem="1dW-xY-uUL" secondAttribute="bottom" constant="38" id="LW2-jk-qvg"/>
                             <constraint firstItem="wqO-AC-zQE" firstAttribute="trailing" secondItem="1dW-xY-uUL" secondAttribute="trailing" constant="16" id="N25-S6-Cha"/>
                             <constraint firstItem="LnY-Kq-afY" firstAttribute="trailing" secondItem="wqO-AC-zQE" secondAttribute="trailing" id="TZJ-fF-45P"/>
+                            <constraint firstItem="wqO-AC-zQE" firstAttribute="trailing" secondItem="NPX-01-9yg" secondAttribute="trailing" constant="321" id="VPz-uW-48x"/>
                             <constraint firstItem="LnY-Kq-afY" firstAttribute="leading" secondItem="wqO-AC-zQE" secondAttribute="leading" id="Vcj-Iu-bbt"/>
+                            <constraint firstItem="NPX-01-9yg" firstAttribute="leading" secondItem="wqO-AC-zQE" secondAttribute="leading" constant="25" id="eRt-zn-CIk"/>
                             <constraint firstAttribute="bottom" secondItem="LnY-Kq-afY" secondAttribute="bottom" id="ggc-36-RRh"/>
                             <constraint firstItem="wqO-AC-zQE" firstAttribute="trailing" secondItem="AuW-9E-esj" secondAttribute="trailing" constant="16" id="k2e-v6-Prf"/>
                             <constraint firstItem="wSc-4a-7LM" firstAttribute="leading" secondItem="wqO-AC-zQE" secondAttribute="leading" constant="16" id="lSX-mG-Vr2"/>
                             <constraint firstItem="AuW-9E-esj" firstAttribute="leading" secondItem="wqO-AC-zQE" secondAttribute="leading" constant="16" id="sjq-rh-fnB"/>
+                            <constraint firstItem="AuW-9E-esj" firstAttribute="top" secondItem="NPX-01-9yg" secondAttribute="bottom" constant="17" id="wa1-Fv-5bh"/>
                             <constraint firstItem="1dW-xY-uUL" firstAttribute="leading" secondItem="wqO-AC-zQE" secondAttribute="leading" constant="16" id="zKp-0M-rfD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wqO-AC-zQE"/>
@@ -289,6 +324,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="backButton" width="29" height="24"/>
         <image name="beginnerBallerBG" width="414" height="736"/>
         <image name="desiredLeagueBG" width="414" height="736"/>
         <image name="swooshLogo" width="119" height="20"/>
