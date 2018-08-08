@@ -17,7 +17,7 @@ class WelcomeVC: UIViewController {
     
     //function will be called when coming back to this screen
     //@IBAction = Interface Builder Action
-    @IBAction func unwindFromSkillVC(unwindSegue: UIStoryboardSegue){
+    @IBAction func unwindFromLeagueVC(unwindSegue: UIStoryboardSegue){
         
     }
 

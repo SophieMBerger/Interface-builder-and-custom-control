@@ -10,11 +10,19 @@ import UIKit
 
 class LeagueVC: UIViewController {
 
-  
+    //declaring a structure
+    //force unwrapping as do not want code to run without a player
+    //A odel that can store data and pass it to the VC
+    var player: Player!
+    
+    
+    @IBOutlet weak var nextBtn: BorderButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        //initializing a struct
+        player = Player()
     }
     
     //Programmatically loading a Segue
@@ -22,9 +30,28 @@ class LeagueVC: UIViewController {
         performSegue(withIdentifier: "skillVCSegue", sender: self)
     }
 
- 
+    @IBAction func onMensTapped(_ sender: Any) {
+        selectLeague(leagueType: "mens")
+    }
     
-
+    @IBAction func onWomensTapped(_ sender: Any) {
+        selectLeague(leagueType: "womens")
+    }
+    
+    @IBAction func onCoedTapped(_ sender: Any) {
+        selectLeague(leagueType: "coed")
+    }
+    
+    
+    func selectLeague (leagueType: String){
+        player.desiredLeague = leagueType
+        nextBtn.isEnabled = true
+    }
+    
+    @IBAction func unwindFromSkillVC(unwindSegueSkill: UIStoryboardSegue){
+        
+    }
+    
     /*
     // MARK: - Navigation
 

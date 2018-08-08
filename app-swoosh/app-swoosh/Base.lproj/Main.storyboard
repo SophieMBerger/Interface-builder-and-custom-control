@@ -130,6 +130,9 @@
                                         <state key="normal" title="Mens">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onMensTapped:" destination="KIW-Ve-sUD" eventType="touchUpInside" id="36c-TX-60V"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sgt-no-Hpc" customClass="BorderButton" customModule="app_swoosh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="70" width="343" height="50"/>
@@ -141,6 +144,9 @@
                                         <state key="normal" title="Womens">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onWomensTapped:" destination="KIW-Ve-sUD" eventType="touchUpInside" id="hq6-5d-Fgj"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJ3-Lx-n7g" customClass="BorderButton" customModule="app_swoosh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="140" width="343" height="50"/>
@@ -152,10 +158,13 @@
                                         <state key="normal" title="Co-ed">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onCoedTapped:" destination="KIW-Ve-sUD" eventType="touchUpInside" id="G3g-zp-zIL"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBF-bv-SXO" customClass="BorderButton" customModule="app_swoosh" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBF-bv-SXO" customClass="BorderButton" customModule="app_swoosh" customModuleProvider="target">
                                 <rect key="frame" x="16" y="690" width="343" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -177,7 +186,7 @@
                                 </constraints>
                                 <state key="normal" image="backButton"/>
                                 <connections>
-                                    <segue destination="kql-vE-WOX" kind="unwind" unwindAction="unwindFromSkillVCWithUnwindSegue:" id="IfE-Q5-ysk"/>
+                                    <segue destination="kql-vE-WOX" kind="unwind" unwindAction="unwindFromLeagueVCWithUnwindSegue:" id="Fgm-XK-PJY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -204,6 +213,7 @@
                         <viewLayoutGuide key="safeArea" id="dAL-Ys-fZ2"/>
                     </view>
                     <connections>
+                        <outlet property="nextBtn" destination="RBF-bv-SXO" id="Q5o-sP-hSJ"/>
                         <segue destination="f4Z-P8-fvE" kind="show" identifier="skillVCSegue" id="L3C-iI-zGq"/>
                     </connections>
                 </viewController>
@@ -293,6 +303,9 @@
                                     <constraint firstAttribute="height" constant="24" id="xiD-Om-hQD"/>
                                 </constraints>
                                 <state key="normal" image="backButton"/>
+                                <connections>
+                                    <segue destination="EBZ-vB-Lhb" kind="unwind" unwindAction="unwindFromSkillVCWithUnwindSegueSkill:" id="nMn-PN-KfH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -319,6 +332,7 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5an-Uk-uPg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="EBZ-vB-Lhb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1594.4000000000001" y="116.74876847290641"/>
         </scene>
