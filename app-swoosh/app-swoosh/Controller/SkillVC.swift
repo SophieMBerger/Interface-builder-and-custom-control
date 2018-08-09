@@ -9,10 +9,15 @@
 import UIKit
 
 class SkillVC: UIViewController {
-
+    
+    //! = ensuring that player will not be nil
+    //declaring a player variable to pass data to this VC
+    var player: Player!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(player.desiredLeague!)
+        
         // Do any additional setup after loading the view.
     }
     
