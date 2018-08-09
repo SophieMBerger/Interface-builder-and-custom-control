@@ -32,14 +32,17 @@ class LeagueVC: UIViewController {
 
     @IBAction func onMensTapped(_ sender: Any) {
         selectLeague(leagueType: "mens")
+        nextBtn.isHidden = false
     }
     
     @IBAction func onWomensTapped(_ sender: Any) {
         selectLeague(leagueType: "womens")
+        nextBtn.isHidden = false
     }
     
     @IBAction func onCoedTapped(_ sender: Any) {
         selectLeague(leagueType: "coed")
+        nextBtn.isHidden = false
     }
     
     
@@ -49,7 +52,7 @@ class LeagueVC: UIViewController {
     }
     
     @IBAction func unwindFromSkillVC(unwindSegueSkill: UIStoryboardSegue){
-        
+        nextBtn.isHidden = true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
